@@ -220,7 +220,7 @@ nav.mobile {
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    background-color: var(--light-color);
+    background-color: var(--white-color);
     
     left: -100%;
     visibility: hidden;
@@ -273,6 +273,81 @@ nav.mobile .enter div span {
     color: var(--grey-color);
     background-color: var(--white-color);
 }
+.search-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+.search-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 0;
+    background-color: var(--white-color);
+    z-index: 999;
+
+    opacity: 0;
+    visibility: hidden;
+}
+.search-modal .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.search-modal .search-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+form.search {
+    position: relative;
+    height: 46px;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form.search input {
+   position: flex;
+}
+form.search :where(input[type=search], input[type=text]) {
+    width: 100%;
+    height: 46px;
+    left: 0;
+    top: 0;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid var(--grey-color);
+    border-radius: 6px;
+}
+form.search input[type=submit] {
+    right: 0;
+    top: 0;
+    border: 0;
+    background-color: transparent;
+    color: transparent;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+}
+form.search i {
+    position: relative;
+    z-index: 1;
+    padding: 0 15px;
+}
+.search-modal .search-footer {
+    margin-top: 8px;
+    color: var(--grey-color);
+}
+.search-modal .search-footer a {
+    margin-right: 8px;
+    color: var(--dark-color);
+    transition: color .3s;
+}
+.search-modal .search-footer a:hover {
+    color: var(--grey-color);
+}
 
 .btn-primary, .btn-light {
     display: inline-flex;
@@ -300,7 +375,8 @@ nav.mobile .enter div span {
     background-color: var(--white-color);
 }
 
-.btn-light:hover {
+.btn-light:hover, 
+.hero a:hover .btn-light {
     background-color: var(--dark-color);
     color: var(--white-color);
 }
@@ -332,7 +408,7 @@ nav.mobile .close-trigger {
     position: absolute;
     right: -40px;
     top: 0;
-    color: var(--white-colors);
+    color: white;
 }
  
 nav.mobile > ul {
@@ -373,6 +449,139 @@ nav.mobile .submenu a {
 nav.mobile .submenu a:hover {
     color: var(--dark-color);
 }
+.search-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 0;
+    background-color: var(--white-color);
+    z-index: 999;
+}
+
+.search-modal .active {
+   opacity: 1;
+   visibility: visible;
+}
+.search-modal .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.search-modal .seacch-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+form.search {
+    position: relative;
+    height: 46px;
+    left: 0;
+    top: 0;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid var(--grey-color);
+    border-radius: 6px;
+}
+form.search input[type=submit] {
+    right: 0;
+    top: 0;
+    border: 0;
+    background-color: transparent;
+    color: transparent;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+}
+form.search i {
+    position: relative;
+    z-index: 1;
+    padding: 0 15px;
+}
+.search-modal .search-footer a { 
+    margin-right: 8px;
+    color: var(--dark-color);
+    text-decoration: underline;
+    transition: color .3s;
+}
+
+.search-modal .search-footer a:hover {
+    color: var(--grey-color);
+}
+
+main > div {
+    margin-bottom: 90px;
+}
+
+
+.hero .wrap {
+    display: grid;
+}
+
+.hero .big {
+    height: 335px;
+}
+.hero .list:not(.big) {
+    height: 230px;
+}
+.hero .wrap .list {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero a:hover img {
+    transform: scale(1.1);
+}
+.hero .info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 10px 40px;
+    text-align: center;
+}
+
+.tabbed nav {
+    margin: 0 0 50px;
+}
+.tabbed nav ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 436px;
+    width: auto;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    align-items: center;
+
+}
+
+.tabbed nav ul li a {
+    font-size: clamp(20px, -0.875em + 8.333vw, 26px);
+    font-weight: 500;
+    transition: color .3s;
+
+}
+
+.tabbed nav ul li:not(.active) a {
+    color: var(--grey-color);
+}
+.tabbed nav ul li a:hover {
+    color: var(--dark-color);
+}
+.tabbed nav ul li.active a {
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.tabbed nav li {
+    width: fit-content!important;
+}
+
+.tabbed .button {
+    text-align: center;
+    margin: 30px 0 0;
+}
 
 
 
@@ -398,6 +607,7 @@ nav.mobile .submenu a:hover {
     object-fit: cover;
     height: 100%;
     position: absolute;
+    transition: all .75s cubic-bezier(0,0,.2,1);
 }
 
 .product :where(.label, .icons-act) {
@@ -479,16 +689,267 @@ nav.mobile .submenu a:hover {
     margin-right: 10px;
 }
 
+.product .colors {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0 15px;
+}
+.product .colors a {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: red;
+}
+.product .colors a::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: black;
+    left: 5px;
+    top: 5px;
+    transition: transform .3s;
+    transform: scale(0);
+
+}
+.product .colros a.active::before,
+.product .colors a:hover::before {
+    background-color: var(--light-color);
+    transform: scale(1);
+    border: 1px solid var(--white-color);
+}
+
+/* couleur des produits */
+.product .colors .maroon {background-color:black;}
+.product .colors .gold{background-color: rgb(247, 7, 7);}
 
 
+.video-box {
+    position: relative;
+    height: 500px;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.video-box .attributes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    cursor: pointer;
+}
 
+.video-box .attributes i {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border: 2px solid var(--white-color);
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
 
+.video-box .attributes h3 {
+    font-size: clamp(26px, -o.875em + 8.333vw, 42px);
+    text-transform: uppercase;
+    font-weight: 700;
 
+}
+.video-box:hover img {
+    transform: scale(1.1);
 
+}
 
+.youtube {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-color);
+    z-index: 1050;
 
+    visibility: hidden;
+    opacity: 0;
+}
+.youtube.active {
+    visibility: visible;
+    opacity: 1;
+}
+.youtube, .youtube :where(.wrap, .inner, iframe) {
+    width: 100%;
+    height: 100%;   
+}
+.youtube .wrap {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.youtube .inner,
+.youtube iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+}
+.youtube .item {
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.youtube .item::before {
+    content: '';
+    display: inline-block;
+    height: 50%;
+    width: 1px;
+    margin-right: -1px;
+}
 
+.youtube .outer {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 850px;
+    max-height: 100%;
+    width: 100%;
+    padding: 0 5px;
+}
 
+.youtube .control {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    position: relative;
+}
+.youtube iframe {
+    display: inline-block;
+    transform: scale3d(.5,.5,.5);
+    transition: transform .3s;
+    transform-origin: 50% 50%;
+}
+.youtube.active iframe {
+    transform: scale3d(1,1,1);
+}
+
+.youtube .item > a {
+    color: var(--white-color);
+    float: right;
+}
+.banner {
+    position: relative;
+    background-color: var(--light-color);
+}
+.banner .wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.banner .bg-image {
+    height: 400px;
+    position: relative;
+}
+.banner .info {
+    padding: 85px 0;
+}
+.banner .info span {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+.banner .info h3 {
+    font-size: clamp(36px, -0.875em + 8.33vw, 50px);
+    margin-bottom: 30px;
+}
+
+.inner-footer {
+    font-size: 14px;
+    padding: 0 0 60px;
+    color: #7f7f7f;
+}
+.inner-footer .wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+.inner-footer .wrap h3 {
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+.inner-footer .wrap > div:not(.subscribe) h3 {
+    font-size: 18px;
+
+}
+.inner-footer .socials ul {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    color: var(--dark-color);
+}
+footer a {
+    transition: color .3s;
+}
+footer a:hover {
+    color: var(--dark-color);
+}
+footer .socials a:hover {
+    color: var(--grey-color);
+}
+
+.copyright {
+    text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+    .header-main .icons :where(li:nth-child(2), li:nth-child(3)) {
+        display: none;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .header-main .icons :where(li:nth-child(2), li:nth-child(3)) {
+        display: none;
+    }
+    .hero .wrap {
+        gap: 15px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .hero .wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero .big {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero .wrap {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    .hero .big {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: 640px;
+    }
+
+    .hero .list:not(.big) {
+        height: 320px;
+        
+    }
+}
 
 @media only screen and (min-width: 992px) {
     .header-main .menu-trigger {
@@ -529,6 +990,7 @@ nav.mobile .submenu a:hover {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+        z-index: 2;
 
     }
 

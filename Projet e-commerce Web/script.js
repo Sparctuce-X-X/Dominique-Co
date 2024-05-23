@@ -18,3 +18,46 @@ for (let i = 0 ; i < menuTrigger.length; i++) {
     closeTrigger[i].addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu)
 }
+
+const submenu = document.querySelectorAll('.sub-trigger');
+    submenu.forEach((menu) => menu.addEventListener('click', toggle));
+
+    function toggle() {
+        submenu.forEach((item) => item != this ? item.classList.remove('expand') : null);
+
+        if (this.classList != 'expand') {
+            this.classList.toggle('expand')
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var tabbedNav = new Swiper('.tabs', {
+    slidePerView : 1,
+    centeredSlides: true,
+    slidesPerGroup: false,
+    spaceBetween : 20,
+})
+
+var theTab = new Swiper('.tabs-box', {
+    slidesPerView : 1,
+    autoHeight: true,
+    thumbs: {
+        Swiper : tabbedNav
+    },
+})
+
+
